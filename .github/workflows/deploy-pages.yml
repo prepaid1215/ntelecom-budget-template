@@ -2,7 +2,7 @@ name: Deploy Astro site to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [template/mvno-site-reuse-v1]
   workflow_dispatch:
   schedule:
     # 매일 00:10 (KST) 재빌드: 프로모션 종료일 등 날짜 기준 표시를 자동 갱신
@@ -27,8 +27,8 @@ jobs:
         uses: withastro/action@v6
         env:
           SITE_URL: https://prepaid1215.github.io
-          BASE_PATH: /ntelecom-budget-phone
-          PRODUCTION_READY: "true"
+          BASE_PATH: /ntelecom-budget-template
+          PRODUCTION_READY: "false"
 
   deploy:
     needs: build
